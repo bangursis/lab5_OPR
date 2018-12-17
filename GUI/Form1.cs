@@ -31,6 +31,9 @@ namespace GUI
             form2.C.Add((int)C0.Value);
             form2.S.Add((int)I0.Value);
 
+            form2.to1yo = to1yo.Checked;
+            form2.to2yo = to2yo.Checked;
+
             form2.rateOfC = (int)rateOfC.Value;
             form2.rateOfR = (int)rateOfR.Value;
             form2.rateOfI = (int)rateOfI.Value;

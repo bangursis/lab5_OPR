@@ -51,6 +51,8 @@
             this.rateOfC = new System.Windows.Forms.NumericUpDown();
             this.rateOfR = new System.Windows.Forms.NumericUpDown();
             this.rateOfI = new System.Windows.Forms.NumericUpDown();
+            this.to1yo = new System.Windows.Forms.CheckBox();
+            this.to2yo = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.years)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.min)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.C0)).BeginInit();
@@ -165,7 +167,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(301, 204);
+            this.button1.Location = new System.Drawing.Point(301, 300);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 23);
             this.button1.TabIndex = 2;
@@ -361,11 +363,33 @@
             0,
             0});
             // 
+            // to1yo
+            // 
+            this.to1yo.AutoSize = true;
+            this.to1yo.Location = new System.Drawing.Point(301, 215);
+            this.to1yo.Name = "to1yo";
+            this.to1yo.Size = new System.Drawing.Size(117, 17);
+            this.to1yo.TabIndex = 14;
+            this.to1yo.Text = "Replace with 1 y.o.";
+            this.to1yo.UseVisualStyleBackColor = true;
+            // 
+            // to2yo
+            // 
+            this.to2yo.AutoSize = true;
+            this.to2yo.Location = new System.Drawing.Point(301, 261);
+            this.to2yo.Name = "to2yo";
+            this.to2yo.Size = new System.Drawing.Size(117, 17);
+            this.to2yo.TabIndex = 15;
+            this.to2yo.Text = "Replace with 2 y.o.";
+            this.to2yo.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.to2yo);
+            this.Controls.Add(this.to1yo);
             this.Controls.Add(this.rateOfI);
             this.Controls.Add(this.rateOfR);
             this.Controls.Add(this.rateOfC);
@@ -431,6 +455,8 @@
         private System.Windows.Forms.NumericUpDown rateOfC;
         private System.Windows.Forms.NumericUpDown rateOfR;
         private System.Windows.Forms.NumericUpDown rateOfI;
+        private System.Windows.Forms.CheckBox to1yo;
+        private System.Windows.Forms.CheckBox to2yo;
     }
 }
 

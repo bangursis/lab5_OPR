@@ -25,6 +25,9 @@ namespace GUI
         public List<int> C { get; set; }
         public List<int> S { get; set; }
         static List<Stage> stages { get; set; }
+        public bool to1yo { get; set; }
+        public bool to2yo { get; set; }
+
         Graphics graphics;
         private Pen pen;
         private List<Tuple<Point, Point>> points;
@@ -49,7 +52,13 @@ namespace GUI
             var options = new List<Tuple<int, List<String>>>();
 
             if (currentT < this.max) { options.Add(save(currentT, year)); }
-            if (currentT >= this.min) { options.Add(sellNBuy(currentT, year)); }
+            if (currentT >= this.min) {
+                options.Add(sellNBuy(currentT, year));
+                if (to1yo)
+                    options.Add(sellNBuyNyo(currentT, year, 1));
+                if (to2yo)
+                    options.Add(sellNBuyNyo(currentT, year, 2));
+            }
 
             return findMax(options);
         }
@@ -91,6 +100,20 @@ namespace GUI
             stages.Add(new Stage(year, t, "Sell", result));
 
             createALink(year, t, 1);
+
+            return Tuple.Create(result, way);
+        }
+        private Tuple<int, List<string>> sellNBuyNyo(int t, int year, int age)
+        {
+            var tuple = year != this.years ? f(age + 1, year + 1) : Tuple.Create(this.S[age + 1], new List<String>());
+            int result = tuple.Item1;
+            List<String> way = tuple.Item2;
+
+            result += this.S[t] + this.R[age] - this.C[age] - this.S[age];
+            way.Add(year + ":( Sell to " + age + " y.o.:" + t + " ) ");
+            stages.Add(new Stage(year, t, "Sell to " + age + " y.o.", result));
+
+            createALink(year, t, age + 1);
 
             return Tuple.Create(result, way);
         }

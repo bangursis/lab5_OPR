@@ -29,26 +29,14 @@
         private void InitializeComponent()
         {
             this.result = new System.Windows.Forms.FlowLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.result.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // result
             // 
-            this.result.Controls.Add(this.dataGridView1);
             this.result.Location = new System.Drawing.Point(0, 0);
             this.result.Name = "result";
             this.result.Size = new System.Drawing.Size(800, 449);
             this.result.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 0;
             // 
             // Form3
             // 
@@ -59,8 +47,6 @@
             this.Name = "Form3";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
-            this.result.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -68,6 +54,5 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel result;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
